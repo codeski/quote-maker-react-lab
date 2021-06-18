@@ -21,7 +21,7 @@ export default (state = [], action) => {
     case 'UPVOTE_QUOTE':
       const upvote = state.filter(quote => action.quoteId === quote.id )
 
-      console.log(upvote)
+      console.log(upvote.votes)
       
       return [...state, {...state, upVote}]
     case 'DOWNVOTE_QUOTE':
