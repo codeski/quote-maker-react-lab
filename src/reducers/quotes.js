@@ -23,7 +23,7 @@ export default (state = [], action) => {
 
       upvote[0].votes += 1
 
-      return [...state, {...state, upvote}]
+      return [...state]
     case 'DOWNVOTE_QUOTE':
       const downvote = state.filter(quote => action.quoteId === quote.id )
 
