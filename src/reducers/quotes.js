@@ -21,11 +21,15 @@ export default (state = [], action) => {
     case 'UPVOTE_QUOTE':
       const upvote = state.filter(quote => action.quoteId === quote.id )
 
-      console.log(upvote.votes)
-      
-      return [...state, {...state, upVote}]
+      upvote[0].votes += 1
+      // console.log(...state)
+
+      return [...state]
     case 'DOWNVOTE_QUOTE':
-      return state
+      const downvote = state.filter(quote => action.quoteId === quote.id )
+
+      downvote[0].votes > 0 ? downvote[0].votes -= 1 : null
+      return [...state]
     default:
       return state;
   }
